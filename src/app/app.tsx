@@ -1,10 +1,14 @@
-import React from "react";
-import "./App.css";
+import React, { useContext } from "react";
+import {
+  RoleContext,
+  RoleContextProvider,
+} from "../entity/user/providers/user-role-provider";
 
 export function App() {
+  const userRole = useContext(RoleContext);
   return (
-    <div className="app">
-      <header className="App-header"></header>
-    </div>
+    <RoleContextProvider>
+      <div className="app">{userRole}</div>
+    </RoleContextProvider>
   );
 }
