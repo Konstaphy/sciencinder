@@ -4,14 +4,14 @@ import {
   RoleContextProvider,
 } from "../entity/user/providers/user-role-provider";
 import { useAuthorization } from "../entity/user/lib/use-authorization";
-import { LoginPage } from "../pages/login-page/login-page";
+import { SignUpPage } from "../pages/sign-up-page/sign-up-page";
 
 export function App() {
   const userRole = useContext(RoleContext);
   const isAuthorized = useAuthorization();
 
   if (!isAuthorized) {
-    return <LoginPage />;
+    return <SignUpPage />;
   }
   return (
     <RoleContextProvider>
